@@ -174,9 +174,9 @@
             this.groupBox1.Controls.Add(this.numMinWorkThreads);
             this.groupBox1.Controls.Add(this.numDefaultConnectionLimit);
             this.groupBox1.Controls.Add(this.numMinCompletionPortThreads);
-            this.groupBox1.Location = new System.Drawing.Point(19, 187);
+            this.groupBox1.Location = new System.Drawing.Point(12, 153);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(770, 98);
+            this.groupBox1.Size = new System.Drawing.Size(713, 98);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Env";
@@ -192,20 +192,20 @@
             // 
             // btnAsync
             // 
-            this.btnAsync.Location = new System.Drawing.Point(19, 373);
+            this.btnAsync.Location = new System.Drawing.Point(12, 300);
             this.btnAsync.Name = "btnAsync";
-            this.btnAsync.Size = new System.Drawing.Size(770, 23);
+            this.btnAsync.Size = new System.Drawing.Size(713, 23);
             this.btnAsync.TabIndex = 0;
-            this.btnAsync.Text = "Async 什么都不设置";
+            this.btnAsync.Text = "Async 什么都不设置，线程数没变化，很快回结果，内存也没太大变化";
             this.btnAsync.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAsync.UseVisualStyleBackColor = true;
             this.btnAsync.Click += new System.EventHandler(this.btnAsync_Click);
             // 
             // btnParallel
             // 
-            this.btnParallel.Location = new System.Drawing.Point(19, 291);
+            this.btnParallel.Location = new System.Drawing.Point(12, 257);
             this.btnParallel.Name = "btnParallel";
-            this.btnParallel.Size = new System.Drawing.Size(770, 23);
+            this.btnParallel.Size = new System.Drawing.Size(713, 23);
             this.btnParallel.TabIndex = 0;
             this.btnParallel.Text = "Parallel 要设置Env为比较大的数才快，线程数也增长很快，因为就是用线程来提高并发的";
             this.btnParallel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -214,9 +214,9 @@
             // 
             // btnSync
             // 
-            this.btnSync.Location = new System.Drawing.Point(19, 124);
+            this.btnSync.Location = new System.Drawing.Point(12, 116);
             this.btnSync.Name = "btnSync";
-            this.btnSync.Size = new System.Drawing.Size(763, 23);
+            this.btnSync.Size = new System.Drawing.Size(713, 23);
             this.btnSync.TabIndex = 0;
             this.btnSync.Text = "Sync 一个一个来，肯定很慢，线程数没什么变化";
             this.btnSync.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -243,23 +243,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(168, 55);
+            this.label5.Location = new System.Drawing.Point(168, 59);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 12);
+            this.label5.Size = new System.Drawing.Size(77, 12);
             this.label5.TabIndex = 5;
-            this.label5.Text = "url:";
+            this.label5.Text = "待测试的url:";
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(204, 55);
+            this.txtUrl.Location = new System.Drawing.Point(251, 55);
             this.txtUrl.Name = "txtUrl";
-            this.txtUrl.Size = new System.Drawing.Size(519, 21);
+            this.txtUrl.Size = new System.Drawing.Size(446, 21);
             this.txtUrl.TabIndex = 6;
             this.txtUrl.Text = "http://localhost:36020/api/test/sleep/10000";
             // 
             // btnSetServer
             // 
-            this.btnSetServer.Location = new System.Drawing.Point(596, 25);
+            this.btnSetServer.Location = new System.Drawing.Point(508, 28);
             this.btnSetServer.Name = "btnSetServer";
             this.btnSetServer.Size = new System.Drawing.Size(75, 23);
             this.btnSetServer.TabIndex = 7;
@@ -280,7 +280,7 @@
             // 
             this.txtServerUrl.Location = new System.Drawing.Point(53, 30);
             this.txtServerUrl.Name = "txtServerUrl";
-            this.txtServerUrl.Size = new System.Drawing.Size(519, 21);
+            this.txtServerUrl.Size = new System.Drawing.Size(439, 21);
             this.txtServerUrl.TabIndex = 6;
             this.txtServerUrl.Text = "http://localhost:36020/api/test/Init/100/200";
             // 
@@ -295,7 +295,7 @@
             this.groupBox3.Controls.Add(this.numTotal);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(771, 80);
+            this.groupBox3.Size = new System.Drawing.Size(713, 80);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "先设置服务器可以接受大并发（通过设置最小线程数实现）";
@@ -304,7 +304,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 425);
+            this.ClientSize = new System.Drawing.Size(730, 335);
             this.Controls.Add(this.btnAsync);
             this.Controls.Add(this.btnParallel);
             this.Controls.Add(this.groupBox3);
