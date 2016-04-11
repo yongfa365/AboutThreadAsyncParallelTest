@@ -8,9 +8,9 @@ using System.Web.Mvc;
 
 namespace MVCTest.Controllers
 {
-    public class DefaultController : AsyncController
+    //need to set server's MinThread to get the best performance
+    public class DefaultController : Controller
     {
-        //need to set server's MinThread to get the best performance
         public async Task<ActionResult> AsyncTest()
         {
             var client = new HttpClient();
