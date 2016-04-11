@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiServer", "ApiServer\ApiServer.csproj", "{AEC0B52E-9249-4426-951F-7D4B02AAA796}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFromTest", "WinFromTest\WinFromTest.csproj", "{B1394B63-C0BB-4272-B8FF-98F102058A3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCTest", "MVCTest\MVCTest.csproj", "{AA20BCB9-7200-41AC-BA74-3A8B2A868D32}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B1394B63-C0BB-4272-B8FF-98F102058A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1394B63-C0BB-4272-B8FF-98F102058A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1394B63-C0BB-4272-B8FF-98F102058A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA20BCB9-7200-41AC-BA74-3A8B2A868D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA20BCB9-7200-41AC-BA74-3A8B2A868D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA20BCB9-7200-41AC-BA74-3A8B2A868D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA20BCB9-7200-41AC-BA74-3A8B2A868D32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
