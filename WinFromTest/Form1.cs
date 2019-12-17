@@ -36,6 +36,28 @@ namespace WinFromTest
             _DefaultConnectionLimit = ServicePointManager.DefaultConnectionLimit;
 
             FillEnv();
+            var lst = new List<场景> {
+                new 场景{NO=0, Client="Sync",ClientThread="1", API="支持大并发",Desc="相当慢" },
+                new 场景{NO=1, Client="Async",ClientThread="1", API="支持大并发",Desc="快，1个线程hold住所有请求" },
+                new 场景{NO=2, Client="Parallel",ClientThread="慢慢加", API="支持大并发" ,Desc="设置env后快"},
+                new 场景{NO=3, Client="ThreadPool",ClientThread="慢慢加", API="支持大并发" },
+                new 场景{NO=4, Client="Multi-Thread",ClientThread="快速上", API="支持大并发" },
+            };
+            dataGridView1.DataSource = lst;
+            for (int i = 0; i < dataGridView1.ColumnCount; i++)
+            {
+                dataGridView1.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+
+        }
+
+        class 场景
+        {
+            public int NO { get; set; }
+            public string Client { get; set; }
+            public String ClientThread { get; set; }
+            public string API { get; set; }
+            public string Desc { get; set; }
         }
 
         private void FillEnv()
@@ -76,7 +98,7 @@ namespace WinFromTest
             Console.WriteLine(DateTime.Now + "\tStart");
             HasCount = numTotal.Value;
             var startTime = DateTime.Now;
-            Parallel.For(0, (int)numTotal.Value, new ParallelOptions { MaxDegreeOfParallelism = 100 }, i =>
+            Parallel.For(0, (int)numTotal.Value, new ParallelOptions { MaxDegreeOfParallelism = (int)numTotal.Value }, i =>
               {
                   var timer = DateTime.Now;
                   var aaa = new WebClient().DownloadString(txtUrl.Text);
@@ -88,6 +110,7 @@ namespace WinFromTest
 
         private void btnAsync_Click(object sender, EventArgs e)
         {
+            Console.Clear();
             Console.WriteLine(DateTime.Now + "\tStart");
             HasCount = numTotal.Value;
 
@@ -104,7 +127,8 @@ namespace WinFromTest
             var client = new HttpClient();
             var aaa = await client.GetStringAsync(txtUrl.Text);
             Opt();
-            Console.WriteLine($"HasCount:{HasCount}\t ThreadID:{Thread.CurrentThread.ManagedThreadId}\t 它耗时：{DateTime.Now - timer} 从开始：{DateTime.Now - startTime}  ok {aaa}");
+            //Console.WriteLine($"进入时间：{timer}\tHasCount:{HasCount}\t ThreadID:{Thread.CurrentThread.ManagedThreadId}\t 耗时：{DateTime.Now - timer} 从开始：{DateTime.Now - startTime}  ok {aaa}");
+            Console.WriteLine($"进入时间：{timer.ToString("HH:mm:ss")}\tHasCount:{HasCount}\t ThreadID:{Thread.CurrentThread.ManagedThreadId}\t 耗时：{DateTime.Now - timer}   ok {aaa}");
 
         }
 
@@ -113,5 +137,7 @@ namespace WinFromTest
             var aaa = new WebClient().DownloadString(txtServerUrl.Text);
             MessageBox.Show(aaa);
         }
+
+
     }
 }
